@@ -1,0 +1,179 @@
+<html>
+<head>
+<style type="text/css">
+.sidepic
+{
+float:right;
+}
+</style>
+
+<title>Xfig Slides</title>
+</head>
+
+<h1>Xfig Slides</h1>
+This fork of <a href="http://www.xfig.org/">Xfig</a> supports animating a static .fig figure for a presentation.
+The best use case is for animating your latex document's .fig figures in beamer (latex).
+
+<p>
+<div class=sidepic>
+<img width=100 src="fig/sample_slides.gif"></img>
+</div>
+
+When writing presentations in latex/beamer, I used to find generating the animated version of a figure very frustrating.
+I used to start from the last animation slide (the fullest figure) and I used to gradually delete parts of the figure until I reached the first one slide.
+When I wanted to make even 1 single change (e.g. spelling mistake) I had to redo the whole process from scratch.
+If you had similar experience, then you should find this tool useful!
+If not, then don't bother.
+
+<p>
+This is <b>experimental</b> software! Please don't blame me if you loose all your precious work, your whole system crashes or if your computer catches fire.
+Proceed at your own risk!
+
+<h2> Installation / Building instructions </h2>
+
+Xfig should depend on development packages like these:
+<pre>
+$ sudo apt-get install xutils-dev
+$ sudo apt-get install libxpm-dev
+$ sudo apt-get install libxaw7-dev
+$ sudo apt-get install libjpeg-dev
+$ sudo apt-get install libxi-dev
+</pre>
+
+Download ( <a href="https://github.com/vporpo/xfig-slides">https://github.com/vporpo/xfig-slides</a> )
+<pre>
+$ git clone https://github.com/vporpo/xfig-slides.git
+</pre>
+
+Build Instructions:
+<pre>
+$ cd xfig_slides
+$ mkdir build && cd build
+$ ../configure --enable-slides
+$ make
+</pre>
+
+Run without installing it.
+<pre>
+$ ./src/xfig
+</pre>
+
+OR you can install it to your system (WARNING: This WILL REPLACE your original xfig!!!):
+<pre>
+$ sudo make install
+$ xfig
+</pre>
+
+If you have any issue check the README file in the source tree.
+
+
+
+<h2>New Features (slides):</h2>
+This modified xfig allows you to generate animated figures for use in latex (beamer) presentation slides. 
+You can reuse an existing .fig file from your paper.
+You only have to annotate the objects with slides numbers and xfig will take care of generating the sequence of .fig and .eps slides.
+
+<p>
+These are the main changes in the interface:
+
+<ul>
+<li> The slides panel on the right side panel (below the depth layers).
+<br/>
+<a href="fig/slides_panel.png"><img  src="fig/slides_panel.png"></img></a>
+</li>
+
+<li> The Kick slide button, second to last button on the left hand side tool bar. </br>
+<a href="fig/kick_slides_but.png"><img src="fig/kick_slides_but.png"></img></a>
+</li>
+
+<li> The Kut (cut) slide button, last button on the left hand side tool bar. </br>
+<a href="fig/kut_slides_but.png"><img src="fig/kut_slides_but.png"></img></a>
+</li>
+
+<li> The File &gt Slides... menu item that brings up a dialog window. </br>
+<a href="fig/main_menu_slides.png"><img src="fig/main_menu_slides.png"></img> </a>
+<a href="fig/slides_dialog.png"><img height=200 src="fig/slides_dialog.png"></img></a>
+</li>
+
+<li> The slides text box when editing an object.</br>
+<a href="fig/slides_txtbox.png"><img src="fig/slides_txtbox.png"></img></a>
+</li>
+
+<li> The "Export Slides" button in the Export dialog window.</br>
+<a href="fig/export_slides_but.png"><img src="fig/export_slides_but.png"></img></a>
+</li>
+
+<li> New update action (bottom bar when Update (u) is selected). You can update the slides of objects. <br/>
+<a href="fig/update_slides.png"><img src="fig/update_slides.png"></img></a>
+</li>
+</ul>
+
+
+
+<h2>Usage:</h2>
+<ul>
+<li>Set slides: Use either: 
+  <ul>
+    <li>the slides text box <img src="fig/txtbox.png"></img> in the edit dialog window</li>
+    <li>the "New Slide" button <img src="fig/new_slide.png"></img> in the slides side bar to generate a new identical slide </li>
+    <li>the Kick (k) editing tool <img src="fig/kick_slides.png"></img> using left/right/middle click to copy objects to next/previous slides or to delete an object from a slide respectively </li>
+    <li>the "Move Up" <img src="fig/move_up.png"></img> or "Move Down" <img src="fig/move_down.png"></img> buttons to move the selected slide upwards/downwards. </li>
+  </ul>
+
+<li>You can "Play &gt" the figure animation forward or backwards using the "Play &gt" <img src="fig/play.png"></img> and Reverse-Play "&lt" <img src="fig/rplay.png"></img> buttons. There is also a reverse play button (&gt). Use their keyboard shortcuts (&gt, &lt) if you wish.
+</li>
+
+
+<li> If you need to change an object's attribute at specific slides (e.g. change the color on slide 4), then you will have to create a new object at same exact place and set the slides attributes for both the original object (slides: 1-3) and the new object (slides 4 onwards). This is quite tedious, so we created the KUT (shift + K) <img src="fig/kut.png"></img> for this. It will split the object on the current slide with just a middle click.<br/>
+  You can also reverse this splitting caused by the KUT tool, by using the merge right (right click) and merge left (left click) capability.
+</li>
+
+<li>(Optional) File &gt Slides to see what is being created. Use "Generate Slides" <img src="fig/generate_slides.png"></img> to generate a FILE-XX.fig files, one for each slide. Use "Export Slides" <img src="fig/export_slides.png"></img> to generate all the FILE-XX.eps files, one for each slide. 
+</li>
+</ul>
+
+
+<h2>Example:</h2>
+Download this sample .fig file <a href="examples/slides_sample.fig">slides_sample.fig</a> that demonstrates how slides work.
+
+<h2>FAQ</h2>
+<ul>
+<li> <b>I want to delete an object from a slide.</b> <br/>
+Deleting an object (using the Delete (d) tool) will remove it from all slides. Removing it from just one slide should be done instead with the Kick tool (k) and middle click on the object. </li>
+
+<li> <b>How do I copy an object in the current slide?</b> <br/>
+Copying an object (using the copy tool (c)) copies all its properties, including its slides. Therefore once you copy an object visible to certain slides, its copy will be visible in the exact same slides as the original. 
+If you want to change the slides set of the copy, you can use edit (e), kick (k) or even update (u) on it.
+</li>
+
+<li> <b> The contents of a compound disappear when I break the compound.</b> <br/>
+This is not a bug. When objects are glued together to form a compound, their slides set is no longer active. The slides set of the compound is the one that controls them. Once the compound is broken the objects are shown using their own slides sets which could be completely different from the compound slides set. If you wish to apply a certain set of slides to all objects in a compound, use the update (u) tool.
+</li>
+
+<li><b>I want to change properties of an object across slides.</b> <br/>
+This is now supported using the KUT tool (shift+k) + middle click. An object is "as is" across all slides, so in order to do this, the KUT tool will limit the slide numbers of the object to the current slide, and will create an exact copy at the same place, starting from the current slide. Now you can set any attributes of the newly created object and these will activate for the current + the remaining slides.
+</li>
+
+<li><b>I want to undo a KUT.</b> <br/>
+Use the merge action of the KUT tool (shift+k) + left/right click. This will merge the current object with the previous (left click) or next slide (right click). The current object's properties will override the others.
+</li>
+
+<li><b>The slides generated do not get aligned properly when used in beamer.</b> <br/>
+You have to use a bounding box (spanning all slides) to enclose all your objects in all slides. You can color the box using the same color as your presentation's background (white?) to make it invisible. The bounding box will make sure all slides are of equal size and they are aligned as you would expect.
+</li>
+
+<li><b>Can I write a complete presentation in this way?</b><br/>
+  You could but I would not recommend it.
+  Currently the maximum slide limit is set to 32 slides, which might not be large enough.
+</li>
+
+<li><b> I don't like this xfig anymore. How do I re-install my system's default xfig? </b> <br/>
+Re-installing your system's xfig package using your system's package manager should do the trick.
+</li>
+
+
+</ul>
+
+<hr>
+<a href=http://vporpo.me>Home</a> 
+</html>
