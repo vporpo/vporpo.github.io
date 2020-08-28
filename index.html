@@ -1,6 +1,5 @@
 <html>
   <head>
-    <link rel="icon" type="image/png" href="img/favico.ico" />
     <title>Vasileios Porpodas</title>
   </head>
 <body bgcolor="222222" text="#dddddd" link="#0099cc" vlink="#888888" alink="#ff9933">
@@ -10,18 +9,7 @@
 <table border="0">
 <tr>
 <td>
-<img src="img/me.jpg" height="120"></img>
-</td>
-<td>
-<pre>
-Vasileios Porpodas
-Software Engineer  
-Intel Corporation
-3600 Juliette Ln
-Santa Clara, CA 95054
-USA
-</pre>
-<table border=0><tr><td>vasileios(DOT)porpodas</td><td><img height="20" src="img/papaki_white.png"/></td><td>intel.com</td></tr></table>
+<table border=0><tr><td>v(DOT)porpodas</td><td><img height="20" src="img/papaki_white.png"/></td><td>google.com</td></tr></table>
 </td>
 <td width=100%></td>
 
@@ -29,29 +17,18 @@ USA
 </table>
 <br/>
 
-I am a compiler engineer at <a href="http://www.intel.com">Intel</a> in Santa Clara, currently working on auto-vectorization.
+I am a compiler engineer at Google in the Bay Area.
 <br/>
 <br/>
 
-Before joining Intel, I was a research associate at the <a href="http://www.cl.cam.ac.uk/">Computer Laboratory, University of Cambridge</a> in <a href="http://www.cl.cam.ac.uk/~tmj32/">Dr Timothy M. Jones's</a> group.
+Before joining Google, I worked at Intel in Santa Clara, and before that I was a research associate at the <a href="http://www.cl.cam.ac.uk/">Computer Laboratory, University of Cambridge</a> in <a href="http://www.cl.cam.ac.uk/~tmj32/">Dr Timothy M. Jones's</a> group.
 <br/>
 <br/>
 I did my Ph.D. at the <a href="http://www.icsa.informatics.ed.ac.uk/compilers/">CArD Group, School of Informatics, University of Edinburgh</a> under the supervision of Professor <a href="http://homepages.inf.ed.ac.uk/mc/">Marcelo Cintra</a>. My work was on code generation for scalable low-power VLIW processors (<a href="papers/v.porpodas_thesis.pdf">thesis</a>).
 
 
 <h3>Research</h3>
-My current research work is mainly on auto-vectorization, but I am also interested in projects related to:
-<ul>
-<li>Auto-Vectorization</li>
-<li>Code Generation</li>
-<li>Instruction scheduling for VLIWs</li>
-<li>Compiler-based error detection</li>
-<li>Micro-architecture</li>
-</ul>
-
-Most of my recent compiler-related work is implemented in industrial-strength compilers (<a href="http://gcc.gnu.org">GCC</a> or <a href="http://llvm.org">LLVM</a>). 
-
-
+I am interested in projects related to compiler optimizations, software reliability and computer architecture.
 
 
 <h3><a name="publications">Publications</a> <a href="http://www.informatik.uni-trier.de/~ley/pers/hd/p/Porpodas:Vasileios.html">(DBLP)</a>
@@ -64,6 +41,7 @@ Most of my recent compiler-related work is implemented in industrial-strength co
 <tr><td>Auto-Vectorization</td><td>
 
 <ul>
+
 
 <li>
 [<a href="http://cgo.org">CGO'19</a>] <a href="https://doi.org/10.1109/CGO.2019.8661192"> Super-Node SLP: Optimized Vectorization for Code Sequences Containing Operators and Their Inverse Elements </a> <br/>
@@ -113,8 +91,8 @@ Vasileios Porpodas, <a href="http://rcor.me">Rodrigo C. O. Rocha</a> and Lu&iacu
 <a href="papers/lslp_cgo2018.pdf">pdf</a>
 <a href="papers/lslp_cgo2018.bib">bib</a>
 <a href="papers/lslp_cgo2018_slides.pdf">slides</a>
-<a href="https://reviews.llvm.org/rL346857"><img src="img/llvm_dragon_small.png"/ height="15px" style="background-color:#555555;"/>LLVM VPlan Patch</a>
 <a href="https://reviews.llvm.org/D60897"><img src="img/llvm_dragon_small.png"/ height="15px" style="background-color:#555555;"/>LLVM SLP Patch</a>
+<a href="https://reviews.llvm.org/rL346857"><img src="img/llvm_dragon_small.png"/ height="15px" style="background-color:#555555;"/>VPlan Patch (third-party)</a>
 <a href="https://www.youtube.com/watch?v=gIEn34LvyNo"><img src="img/play_button_small.png"/ height="15px">Video@EuroLLVM'18</a>
 </li>
 <br/>
@@ -139,7 +117,7 @@ Vasileios Porpodas, and <a href="http://www.cl.cam.ac.uk/~tmj32/">Timothy M. Jon
 <a href="papers/tslp_pact2015.pdf">pdf</a>
 <a href="papers/tslp_pact2015.bib">bib</a>
 <a href="papers/tslp_pact2015_slides.pdf">slides</a>
-<a href="https://reviews.llvm.org/D57779"><img src="img/llvm_dragon_small.png"/ height="15px" style="background-color:#555555;"/>LLVM patch</a>
+<a href="https://reviews.llvm.org/D57779"><img src="img/llvm_dragon_small.png"/ height="15px" style="background-color:#555555;"/>LLVM patch (third-party)</a>
 <a href="https://www.youtube.com/watch?v=xxtA2XPmIug"><img src="img/play_button_small.png"/ height="15px">video(LLVM'15)</a>
 </li>
 <br/>
@@ -159,6 +137,25 @@ Vasileios Porpodas, <a href="http://homepages.inf.ed.ac.uk/s1158370/">Alberto Ma
 </ul>
 
 </td></tr>
+
+
+
+<tr><td>Scalar Optimizations</td></td>
+<td>
+  <ul>
+<li>
+[<a href="https://conf.researchr.org/home/CC-2020">CC'20</a>] <a href="https://doi.org/10.1145/3377555.3377890"> Vectorization-aware loop unrolling with seed forwarding </a> <br/>
+<a href="http://rcor.me">Rodrigo C. O. Rocha</a>, Vasileios Porpodas, Pavlos Petoumenos, Lu&iacutes F. W. G&oacutees, Zheng Wang, Murray Cole and Hugh Leather.
+<br/>Intl. Conference on Compiler Construction (CC), 2020.
+<br/>
+<a href="papers/valu_cc2020.pdf">pdf</a>
+<a href="papers/valu_cc2020.bib">bib</a>
+</li>
+<br/>
+
+</ul>
+</td>
+
 
 <tr><td>Parallel Data Structures</td><td>
  <ul>
